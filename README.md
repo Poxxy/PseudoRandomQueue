@@ -5,9 +5,9 @@ A Twitch Bot which allows users to join a queue which is somewhat randomized but
 
 1. Make sure you have python 3+ installed.
 2. Download the files in this repo and put them in a folder together.
-3. In a terminal type 'pip install -r requirements.txt' while in the folder directory.
+3. In a terminal type ``pip install -r requirements.txt`` while in the folder directory.
 4. Set up your user credentials in credentials.py **NOTE: Do Not Share These Credentials With Anyone!**
-5. In the terminal type `python weightedRandomQueue.py'
+5. In the terminal type `python weightedRandomQueue.py`
 6. You're done!
 
 # Commands
