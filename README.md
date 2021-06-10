@@ -13,13 +13,13 @@ A Twitch Bot which allows users to join a queue which is somewhat randomized but
 # Commands
 1. ``!helpq`` lists all the commands out
 2. ``!joinq`` adds yourself to the queue
-3. ``!listq`` lists the top 5 people in the queue
-4. ``!updateq1`` removes the top person
-5. ``!updateq2`` removes the top 2 people
-6. ``!updateq3`` removes the top 3 people
+3. ``!leaveq`` removes yourself from queue
+4. ``!listq`` lists the top 5 people in the queue
+5. ``!updateq1`` removes the top person
+6. ``!updateq2`` removes the top 2 people
+7. ``!updateq3`` removes the top 3 people
 
 # Planned Updates
 1. Code refinement, particularly eliminating repeat code.
-2. Automatically detect approved mod based on user info rather than hardcode.
-3. List users remove when using updateq.
-4. Add ability to remove yourself from queue.
+~~2. Automatically detect approved mod based on user info rather than hardcode.~~ Added
+~~3. Add ability to remove yourself from queue.~~ Added
