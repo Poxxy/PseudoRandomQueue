@@ -21,7 +21,7 @@ A Twitch Bot which allows users to join a queue which is somewhat randomized but
 
 # Planned Updates
 1. Code refinement, particularly eliminating repeat code.
-2. 
+
 ~~2. Automatically detect approved mod based on user info rather than hardcode.~~ Added
 
 ~~3. Add ability to remove yourself from queue.~~ Added
