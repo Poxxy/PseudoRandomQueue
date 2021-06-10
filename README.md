@@ -18,3 +18,8 @@ A Twitch Bot which allows users to join a queue which is somewhat randomized but
 5. ``!updateq2`` removes the top 2 people
 6. ``!updateq3`` removes the top 3 people
 
+# Planned Updates
+1. Command for seeing your position in queue.
+2. Code refinement, particularly eliminating repeat code.
+3. Automatically detect approved mod based on user info rather than hardcode.
+4. List users remove when using updateq
