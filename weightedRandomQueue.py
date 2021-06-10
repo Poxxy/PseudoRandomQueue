@@ -13,8 +13,6 @@ TWITCH_TOKEN = credentials.TWITCH_TOKEN
 TWITCH_CLIENT_ID = credentials.TWITCH_CLIENT_ID
 TWITCH_CLIENT_SECRET = credentials.TWITCH_CLIENT_SECRET
 
-APPROVED_MODS = credentials.APPROVED_MODS
-
 bot = commands.Bot(
     irc_token=TWITCH_TOKEN,
     client_id=TWITCH_CLIENT_ID,
@@ -50,6 +48,17 @@ async def join_queue(ctx):
         myQueue.update()
         myQueue.insert(ctx.author.name, random.randint(0,20))
 
+@bot.command(name='leaveq')
+async def leave_queue(ctx):
+    time.sleep(.5)
+    try:
+        for users in myQueue.queue:
+            if ctx.author.name in users[0]:
+                pos_in_queue = myQueue.queue.index(users)
+                del myQueue.queue[pos_in_queue]
+                await ctx.send(f"Removed {ctx.author.name}")
+    except:
+        await ctx.send("Something went wrong. Sorry, this feature is still quite new.")
 
 @bot.command(name='listq')
 async def list_queue(ctx):
@@ -60,44 +69,44 @@ async def list_queue(ctx):
     message = ""
     i = 1
     for x in myQueue.queue:
-        if i > 5:
+        if i > 3:
             break
         message += f'{i}. {x[0]}, '
         i += 1
     await ctx.send(message)
 
-
 @bot.command(name='updateq1')
 async def update_queue1(ctx):
 	time.sleep(.5)
-	if (ctx.author.name).lower() in  APPROVED_MODS:
+	if ctx.author.is_mod:
 		myQueue.delete(1)
 	
-
 @bot.command(name='updateq2')
 async def update_queue1(ctx):
 	time.sleep(.5)
-	if (ctx.author.name).lower() in APPROVED_MODS:
+	if ctx.author.is_mod:
 		myQueue.delete(2)
 	
-
 @bot.command(name='updateq3')
 async def update_queue1(ctx):
 	time.sleep(.5)
-	if (ctx.author.name).lower() in APPROVED_MODS:
+	if ctx.author.is_mod:
 		myQueue.delete(3)
 
 @bot.command(name='helpq')
 async def help_queue(ctx):
 	time.sleep(.5)
-	await ctx.send("Possible commands: joinq, listq, updateq1, updateq2, updateq3")
+	await ctx.send("Possible commands: joinq, leaveq, listq, updateq1, updateq2, updateq3, credit")
 	
-
-
-@bot.command(name='reply')
-async def say_hello(ctx):
+@bot.command(name='credit')
+async def credit(ctx):
 	time.sleep(.5)
-	await ctx.send(f'Hello {ctx.author.name}!')
+	await ctx.send(f'I was programmed by waltzingstoic.')
+
+@bot.command(name='joincult')
+async def join_cult(ctx):
+    time.sleep(.5)
+    await ctx.send(f'Welcome to the cult, {ctx.author.name} :)')
 
 
 class WeightedRandomQueue():
