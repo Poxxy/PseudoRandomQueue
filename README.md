@@ -20,7 +20,7 @@ A Twitch Bot which allows users to join a queue which is somewhat randomized but
 7. ``!updateq3`` removes the top 3 people
 
 # Planned Updates
-1. Code refinement, particularly eliminating repeat code.
+~~1. Code refinement, particularly eliminating repeat code.~~ Done
 
 ~~2. Automatically detect approved mod based on user info rather than hardcode.~~ Added
 
